@@ -1,3 +1,4 @@
+// eslint no-param-reassign
 export default function appendToEachArrayValue(array, appendString) {
   let idx = 0;
   for (const value of array) {
