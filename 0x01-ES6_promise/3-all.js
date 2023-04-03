@@ -6,7 +6,13 @@ export default function handleProfileSignup() {
 
   return Promise.all([photo, user])
     .then((values) => {
-      console.log(`${values[0].body} ${values[1].firstName} ${values[1].lastName}`);
+      console.log(
+        // eslint-disable-next-line comma-dangle
+        `${values[0].body} ${values[1].firstName} ${values[1].lastName}`
+      );
     })
-    .catch(() => new Error('Signup system offline'));
+    .catch(() => {
+      console.log('Signup system offline');
+      return Promise.reject(new Error('Signup system offline'));
+    });
 }
