@@ -12,7 +12,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
         value:
           result.status === 'fulfilled'
             ? result.value
-            : new Error(`Error: ${fileName} cannot be processed`),
+            : new Error(`'Error: ${fileName} cannot be processed'`),
         // eslint-disable-next-line comma-dangle
       }))
     // eslint-disable-next-line function-paren-newline
