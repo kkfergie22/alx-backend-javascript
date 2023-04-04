@@ -13,6 +13,6 @@ export default function handleProfileSignup() {
     })
     .catch(() => {
       console.log('Signup system offline');
-      return Promise.reject(new Error('Signup system offline'));
+      throw new Error('Signup system offline');
     });
 }
