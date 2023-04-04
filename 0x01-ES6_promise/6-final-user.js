@@ -10,7 +10,9 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       results.map((result) => ({
         status: result.status,
         value:
-          result.status === 'fulfilled' ? result.value : String(result.reason),
+          result.status === 'fulfilled'
+            ? result.value
+            : `Error: ${fileName} cannot be processed`,
 
         // eslint-disable-next-line comma-dangle
       }))
