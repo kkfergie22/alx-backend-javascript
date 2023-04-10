@@ -1,10 +1,18 @@
 export default function updateStudentGradeByCity(students, city, newGrades) {
-  const filteredArray = students.filter((student) => student.location === city);
-  const gradeArray = newGrades.map((newGrade) => newGrade.grade);
-  const result = filteredArray.map((filteredItem, index) => {
-    // eslint-disable-next-line no-param-reassign
-    filteredItem.grade = gradeArray[index];
-    return filteredItem;
+  const gradedStudents = students.map((student) => {
+    // match the grades by their ID
+    const matchingGrade = newGrades.find((grade) => grade.studentId === student.id);
+    if (matchingGrade) {
+      return { ...student, grade: matchingGrade.grade };
+    }
+    // if no new grade put 'N/A'
+    if (!matchingGrade) {
+      return { ...student, grade: 'N/A' };
+    }
+    return student;
   });
-  return result;
+  // filter the students by city
+  const filteredArray = gradedStudents.filter((gradedStudent) => gradedStudent.location === city);
+
+  return filteredArray;
 }
