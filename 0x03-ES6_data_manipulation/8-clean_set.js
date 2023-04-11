@@ -8,5 +8,6 @@ export default function cleanSet(set, startString) {
       result.push(item.replace(startString, ''));
     }
   }
-  return result.join('-');
+  const finalResult = `${result.join('-')}-`;
+  return finalResult;
 }
