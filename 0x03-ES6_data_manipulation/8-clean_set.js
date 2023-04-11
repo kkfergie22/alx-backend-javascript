@@ -4,7 +4,7 @@ export default function cleanSet(set, startString) {
     return '';
   }
   for (const item of set) {
-    if (item.startsWith(startString) && startString !== '') {
+    if (item.startsWith(startString)) {
       result.push(item.replace(startString, ''));
     }
   }
