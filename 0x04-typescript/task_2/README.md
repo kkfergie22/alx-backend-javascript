@@ -1,0 +1,1 @@
+# TypeScript task 1
