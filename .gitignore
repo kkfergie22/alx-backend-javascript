@@ -1,6 +1,4 @@
 node_modules
-package-lock.json
-package.json
 setup.sh
 1-main.js
 .eslintrc.json
@@ -12,3 +10,5 @@ test.js
 babel.config.js
 10-main.js
 test2.js
+package.json
+package-lock.json
