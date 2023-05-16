@@ -1,10 +1,8 @@
-console.log('Welcome to Holberton School, what is your name?');
-
-process.stdin.on('readable', (readable) => {
-  process.stdin.read();
-  process.stdout(`Your name is: ${readable.toString()}`);
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
+process.stdin.on('data', (data) => {
+  process.stdout.write(`Your name is: ${data.toString()}`);
+  process.exit();
 });
-
 process.on('exit', () => {
-  console.log('This important software is now closing');
+  process.stdout.write('This important software is now closing\n');
 });
