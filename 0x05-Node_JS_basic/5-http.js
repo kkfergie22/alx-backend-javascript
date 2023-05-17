@@ -7,7 +7,7 @@ const app = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-    const filePath = process.argv[2];
+    const filePath = process.argv[2].toString();
     countStudents(filePath)
       .then((data) => {
         res.writeHead(200, { 'Content-Type': 'text/plain' });
