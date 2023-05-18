@@ -1,4 +1,4 @@
-function calculateNumber(a, b, type) {
+function calculateNumber(type, a, b) {
   if (typeof a !== 'number' || typeof b !== 'number' || typeof type !== 'string') {
     return 'Invalid input';
   }
