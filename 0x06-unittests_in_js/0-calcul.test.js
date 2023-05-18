@@ -27,6 +27,31 @@ describe('calculateNumber', function () {
     assert.strictEqual(result, 8);
   });
 
+  it('should round two very small numbers and return the sum', function () {
+    const result = calculateNumber(0.1, 0.00001);
+    assert.strictEqual(result, 0);
+  });
+
+  it('should round two fractions and return the sum', function () {
+    const result = calculateNumber(1 / 3, 1 / 6);
+    assert.strictEqual(result, 0);
+  });
+
+  it('should evaluate NaN and a number and return the sum', function () {
+    const result = calculateNumber(NaN, 5);
+    assert.strictEqual(result, NaN);
+  });
+
+  it('should evaluate infinity and a number and return the sum', function () {
+    const result = calculateNumber(Infinity, 5);
+    assert.strictEqual(result, Infinity);
+  });
+
+  it('should evaluate two 0s of different signs and return the sum', function () {
+    const result = calculateNumber(-0, 0);
+    assert.strictEqual(result, 0);
+  });
+
   it('should round two zeroes 0 and return the sum', function () {
     const result = calculateNumber(0, 0);
     assert.strictEqual(result, 0);
