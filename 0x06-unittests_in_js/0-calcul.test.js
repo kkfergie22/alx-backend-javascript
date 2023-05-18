@@ -67,23 +67,23 @@ describe('calculateNumber', function () {
     assert.strictEqual(result, 1111111111);
   });
 
-  // it('should return an error', function () {
-  //   const result = calculateNumber(5, 'abc');
-  //   assert.strictEqual(result, 'Invalid input');
-  // });
+  it('should return an error', function () {
+    const result = calculateNumber(5, 'abc');
+    assert.strictEqual(result, 'Invalid input');
+  });
 
-  // it('should return an error', function () {
-  //   const result = calculateNumber('abc', 'xyz');
-  //   assert.strictEqual(result, 'Invalid input');
-  // });
+  it('should return an error', function () {
+    const result = calculateNumber('abc', 'xyz');
+    assert.strictEqual(result, 'Invalid input');
+  });
 
-  // it('should return an error', function () {
-  //   const result = calculateNumber(5, true);
-  //   assert.strictEqual(result, 'Invalid input');
-  // });
+  it('should return an error', function () {
+    const result = calculateNumber(5, true);
+    assert.strictEqual(result, 'Invalid input');
+  });
 
-  // it('should return an error', function () {
-  //   const result = calculateNumber(false, true);
-  //   assert.strictEqual(result, 'Invalid input');
-  // });
+  it('should return an error', function () {
+    const result = calculateNumber(false, true);
+    assert.strictEqual(result, 'Invalid input');
+  });
 });
